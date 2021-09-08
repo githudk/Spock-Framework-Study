@@ -28,13 +28,32 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
-
-
-    <!--    <dependency>-->
-<!--      <groupId>org.springframework.boot</groupId>-->
-<!--      <artifactId>spring-boot-starter-test</artifactId>-->
-<!--      <scope>test</scope>-->
-<!--    </dependency>-->
+    <!-- Spring boot 自己的测试模块依赖-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- 使用 Spock 必须的依赖：spock 的核心依赖-->
+    <dependency>
+      <groupId>org.spockframework</groupId>
+      <artifactId>spock-core</artifactId>
+      <version>1.2-groovy-2.4</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- 使用 Spock 必须的依赖：groovy 库-->
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>2.4.15</version>
+    </dependency>
+    <!-- spock 与 spring 环境的集成 -->
+    <dependency>
+      <groupId>org.spockframework</groupId>
+      <artifactId>spock-spring</artifactId>
+      <version>1.2-groovy-2.4</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
