@@ -44,7 +44,7 @@ public class OrderServiceImpl implements OrderService {
             Integer count = stockEntity.getCount();
             Integer goodsNumb = goodsNumbMap.get(stockEntity.getGoodsId());
             if (count < goodsNumb) {
-                throw new RuntimeException("商品数量不足");
+                throw new RuntimeException("商品库存不足");
             }
         }
 

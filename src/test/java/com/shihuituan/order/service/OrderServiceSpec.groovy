@@ -18,38 +18,17 @@ import spock.lang.Specification
 class OrderServiceSpec extends Specification {
 
 
+    /**
+     * 模拟库存接口实例
+     */
     def stockService = Mock(StockService)
 
+    /**
+     * 创建订单接口实例
+     */
     def orderService = new OrderServiceImpl(
             stockService: stockService
     )
-
-    /**
-     * 模拟库存接口正常返回数据
-     * @return
-     */
-    def "测试订单的创建方法" (){
-
-        given: "给定入参：订单数据"
-        def order = getOrder()
-
-        and: "设定库存的模拟调用"
-        stockService.getStockNumb(_) >> stock
-
-        when: "测试创建订单"
-        orderService.createOrder(order)
-
-        then: "预期如下"
-        uptateTimes * stockService.updateStock(_)
-
-
-        where: "数据表格"
-        stock | uptateTimes
-        getEnoughStockNumb()   | 3
-        getStockEmpty()   | 0
-        getStockZero()   | 0
-
-    }
 
 
 
